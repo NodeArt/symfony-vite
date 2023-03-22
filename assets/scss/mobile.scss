@@ -1,6 +1,71 @@
-body {
-	background-color: #242121;
-	p {
-		color: cyan;
+@import "../app.scss";
+
+.product-benefits {
+	display: grid;
+	padding: 96px 0px;
+	gap: 96px;
+	background-color: $gray-50;
+
+	.container:last-child > img {
+		order: 1;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+		align-items: center;
+
+		@media screen and (min-width: $min-width-tablet) {
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+		}
+
+		.image {
+			width: 100%;
+		}
+
+		.content {
+			padding: 0px 64px;
+
+			@media (min-width: $min-width-wide-screen) {
+				padding: 0px 112px;
+			}
+
+			.heading {
+				margin-bottom: 16px;
+				color: $gray-900;
+				@extend %display-md;
+				font-weight: $font-w-semibold;
+			}
+
+			p {
+				color: $gray-600;
+				@extend %text-lg;
+				font-weight: $font-w-regular;
+			}
+
+			.check-items {
+				display: flex;
+				flex-direction: column;
+				padding-left: 16px;
+				margin-top: 32px;
+				gap: 20px;
+
+				.check-item {
+					display: flex;
+					gap: 12px;
+
+					.badge-color {
+						background-color: transparent;
+					}
+
+					.icon-28 {
+						height: 28px;
+						width: 28px;
+					}
+				}
+			}
+		}
 	}
 }

@@ -4,19 +4,69 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ vite_entry_link_tags('webComponents') }}
     {{ vite_entry_link_tags('pages') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    {{ vite_entry_script_tags('webComponents') }}
     {{ vite_entry_script_tags('pages') }}
 {% endblock %}
 
 {% block body %}
   <h1>Main Page</h1>
   <a href="/">&larr; Back</a>
-  <product-benefits-component></product-benefits-component>
-  <p>End Page</p>
+
+  <section class="product-benefits">
+    <div class="container">
+      <div class="content">
+        <h2 class="heading">Product Benefits right</h2>
+        <p>
+          The HumaStar 300SR is the latest member of HUMAN's clinical chemistry systems. Based on the
+          proven hardware and software quality of HumaStar 100/200 it uses the time-tested system
+          reagent kits of HumaStar 600 with perfectly matching methods, calibrators and controls.
+        </p>
+      </div>
+
+      <img src="{{ asset('assets/images/ProductBenefits/humastar-300sr-inside.jpg') }}" class="image" alt="HumaStar 300SR inside" />
+    </div>
+
+    <div class="container">
+      <img src="{{ asset('assets/images/ProductBenefits/humastar-300sr-outside.png') }}" class="image" alt="HumaStar 300SR outside" />
+
+      <div class="content">
+        <h2 class="heading">Product Benefits right</h2>
+        <p>
+          The HumaStar 300SR is the latest member of HUMAN's clinical chemistry systems. Based on the
+          proven hardware and software quality of HumaStar 100/200 it uses the time-tested system
+          reagent kits of HumaStar 600 with perfectly matching methods, calibrators and controls. The
+          HumaStar 300SR is the latest member of HUMAN's clinical chemistry systems. Based on the
+          proven hardware and software quality of HumaStar 100/200 it uses the time-tested system
+          reagent kits of HumaStar 600 with perfectly matching methods, calibrators and controls.
+        </p>
+
+        <div class="check-items">
+          <div class="check-item">
+            <div class="badge-primary badge-color icon-28">
+              {{ source('check-circle.svg') }}
+            </div>
+            <p>Keep your customers in the loop with live chat</p>
+          </div>
+
+          <div class="check-item">
+            <div class="badge-primary badge-color icon-28">
+              {{ source('check-circle.svg') }}
+            </div>
+            <p>Embed help articles right on your website</p>
+          </div>
+
+          <div class="check-item">
+            <div class="badge-primary badge-color icon-28">
+              {{ source('check-circle.svg') }}
+            </div>
+            <p>Customers never have to leave the page to find an answer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}

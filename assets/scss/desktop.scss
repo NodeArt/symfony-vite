@@ -1,8 +1,22 @@
-@media (min-width: 700px) {
-	p {
-		color: chocolate;
-	}
+@import "../app.scss";
+
+@media (min-width: $min-width-tablet) {
 	.hide {
 		display: none;
+	}
+
+	.product-benefits {
+		.container:last-child > img {
+			order: 0;
+		}
+
+		.container {
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+
+			.content {
+				padding: 0px 40px;
+			}
+		}
 	}
 }
