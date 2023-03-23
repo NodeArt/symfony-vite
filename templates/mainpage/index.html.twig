@@ -16,6 +16,10 @@
   <h1>Main Page</h1>
   <a href="/">&larr; Back</a>
 
+  <div class="hidden"> 
+    {% include('icons/main-page.svg') %}
+  </div>
+
   <section class="product-benefits">
     <div class="container">
       <div class="content">
@@ -46,24 +50,168 @@
 
         <div class="check-items">
           <div class="check-item">
-            <div class="badge-primary badge-color icon-28">
-              {{ source('check-circle.svg') }}
+            <div class="badge-primary badge-color">
+              <svg class="icon-28">
+                <use xlink:href="#check-circle" />
+              </svg>
             </div>
             <p>Keep your customers in the loop with live chat</p>
           </div>
 
           <div class="check-item">
-            <div class="badge-primary badge-color icon-28">
-              {{ source('check-circle.svg') }}
+            <div class="badge-primary badge-color">
+              <svg class="icon-28">
+                <use xlink:href="#check-circle" />
+              </svg>
             </div>
             <p>Embed help articles right on your website</p>
           </div>
 
           <div class="check-item">
-            <div class="badge-primary badge-color icon-28">
-              {{ source('check-circle.svg') }}
+            <div class="badge-primary badge-color">
+              <svg class="icon-28">
+                <use xlink:href="#check-circle" />
+              </svg>
             </div>
             <p>Customers never have to leave the page to find an answer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plug-and-play">
+    <div class="container">
+      <div class="content">
+        <h2 class="heading">Plug &amp; play, it has never been so simple!</h2>
+
+        <p class="paragraph">
+          The HumaStar 300SR is the latest member of HUMAN's clinical chemistry systems. Based on the
+          proven hardware and software quality of HumaStar 100/200 it uses the time-tested system
+          reagent kits of HumaStar 600 with perfectly matching methods, calibrators and controls.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="wrapper">
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#speedometer" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Throughput: up to 300 tests/h</p>
+            <p>Medium throughput random access system</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#beaker" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Prefilled and validated system reagents</p>
+            <p>Up to 300 tests per hour</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#droplets" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Low water consumption (&lt; 3 l/h)</p>
+            <p>Barcode reader for samples and reagents</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#grid-dots-outer" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Sample positions: 60</p>
+            <p>60 positions for samples and solutions</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#scale" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">2 kit sizes per assay available</p>
+            <p>40 cooled positions for reagents and solutions</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#terminal-browser" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Intuitive and powerful software</p>
+            <p>Continuous programming and loading</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#grid-dots-blank" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Reagent positions: 40</p>
+            <p>3 open channels for user-defined method</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#switch-horizontal" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Open channels: 3</p>
+            <p>LIS: bi-directional 3 open channels for user-defined method</p>
+          </div>
+        </div>
+
+        <div class="component">
+          <div class="icon icon-lg icon-primary icon-light-circle-outline">
+            <svg>
+              <use xlink:href="#globe" />
+            </svg>
+          </div>
+
+          <div class="text">
+            <p class="text-heading">Multi-language: English, Spanish, French</p>
+            <p>
+              Multi-language software: English, French, Spanish, additional languages can be
+              translated by distributor with integrated translation tool
+            </p>
           </div>
         </div>
       </div>

@@ -19,4 +19,42 @@
 			}
 		}
 	}
+
+	.plug-and-play {
+		.container {
+			.content {
+				padding: 0 172px;
+			}
+		}
+	}
+}
+
+@media (min-width: $min-width-wide-screen) {
+	.product-benefits {
+		.container {
+			.content {
+				padding: 0px 112px;
+			}
+		}
+	}
+
+	.plug-and-play {
+		padding: 96px 80px;
+
+		.container {
+			.content {
+				padding: 0px 224px;
+			}
+
+			.wrapper {
+				.component {
+					flex-direction: row;
+				}
+
+				.text {
+					padding-top: 10px;
+				}
+			}
+		}
+	}
 }
