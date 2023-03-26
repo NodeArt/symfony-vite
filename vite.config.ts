@@ -9,7 +9,7 @@ export default defineConfig({
 			preprocess: sveltePreprocess({
 				postcss: true,
 				scss: {
-					prependData: '@use "assets/app.scss" as *;',
+					prependData: '@use "assets/utils/mixins.scss" as *;',
 				},
 			}),
 			compilerOptions: {

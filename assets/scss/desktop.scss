@@ -1,4 +1,4 @@
-@import "../app.scss";
+@import "./utils/mixins";
 
 @media (min-width: $min-width-tablet) {
 	.hide {
