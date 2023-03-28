@@ -4,12 +4,19 @@ import { default as symfonyPlugin } from "vite-plugin-symfony";
 import sveltePreprocess from "svelte-preprocess";
 
 export default defineConfig({
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "assets/variables.scss";',
+			},
+		},
+	},
 	plugins: [
 		svelte({
 			preprocess: sveltePreprocess({
 				postcss: true,
 				scss: {
-					prependData: '@use "assets/utils/mixins.scss" as *;',
+					prependData: '@use "assets/variables.scss" as *;',
 				},
 			}),
 			compilerOptions: {

@@ -1,5 +1,3 @@
-@import "./utils/mixins";
-
 .hidden {
 	display: none;
 }
@@ -8,7 +6,7 @@
 	display: grid;
 	padding: 96px 0px;
 	gap: 96px;
-	background-color: $gray-50;
+	background-color: var(--gray-50);
 
 	.container:last-child > img {
 		order: 1;
@@ -29,11 +27,11 @@
 
 			.heading {
 				margin-bottom: 16px;
-				@include font($gray-900, "display-md", $font-w-semibold);
+				@include font(var(--gray-900), "display-md", var(--font-w-semibold));
 			}
 
 			p {
-				@include font($gray-600, "text-lg", $font-w-regular);
+				@include font(var(--gray-600), "text-lg", var(--font-w-regular));
 			}
 
 			.check-items {
@@ -75,12 +73,12 @@
 			.heading {
 				margin-bottom: 20px;
 				text-align: center;
-				@include font($gray-900, "display-md", $font-w-semibold);
+				@include font(var(--gray-900), "display-md", var(--font-w-semibold));
 			}
 
 			.paragraph {
 				text-align: center;
-				@include font($gray-600, "text-xl", $font-w-regular);
+				@include font(var(--gray-600), "text-xl", var(--font-w-regular));
 			}
 		}
 
@@ -96,11 +94,11 @@
 
 				.text {
 					padding: 0px;
-					@include font($gray-600, "text-md", $font-w-regular);
+					@include font(var(--gray-600), "text-md", var(--font-w-regular));
 
 					.text-heading {
 						margin-bottom: 8px;
-						@include font($gray-900, "text-xl", $font-w-semibold);
+						@include font(var(--gray-900), "text-xl", var(--font-w-semibold));
 					}
 				}
 			}

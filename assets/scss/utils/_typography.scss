@@ -1,17 +1,12 @@
-body {
-	font-family: "Inter", sans-serif;
-	font-size: 16px;
-}
+// h1 {
+// 	@extend %display-lg;
+// 	font-weight: var(--font-w-bold);
+// }
 
-h1 {
-	@extend %display-lg;
-	font-weight: $font-w-bold;
-}
-
-h2 {
-	@extend %display-md;
-	font-weight: $font-w-semibold;
-}
+// h2 {
+// 	@extend %display-md;
+// 	font-weight: var(--font-w-semibold);
+// }
 
 @font-face {
 	font-family: "Inter";

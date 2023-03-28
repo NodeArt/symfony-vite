@@ -1,14 +1,8 @@
 @use "sass:math";
 
-// mobile-first
+// // mobile-first
 $min-width-tablet: 700px;
 $min-width-wide-screen: 1440px;
-
-// font-weight
-$font-w-regular: 400;
-$font-w-medium: 500;
-$font-w-semibold: 600;
-$font-w-bold: 700;
 
 // typography
 %display-2xl {
