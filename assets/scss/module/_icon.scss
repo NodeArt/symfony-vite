@@ -1,0 +1,123 @@
+// icons
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+// icon sizes
+$icon-sizes: "xs" 24px 10px, "sm" 32px 13.3px, "md" 40px 16.6px, "lg" 48px 20px, "xl" 56px 23.3px;
+
+@each $name, $value, $svg-size in $icon-sizes {
+	.icon-#{$name},
+	.icon-#{$name} + .icon-background {
+		width: $value;
+		height: $value;
+		border-radius: 28px;
+
+		& > svg {
+			height: $svg-size;
+			width: $svg-size;
+		}
+	}
+}
+
+// icon theme sizes
+$border-sizes: "xs" 2px, "sm" 4px, "md" 6px, "lg" 8px, "xl" 10px;
+
+@each $size, $border-size in $border-sizes {
+	.icon-#{$size}.icon-light-circle-outline,
+	.icon-#{$size}.icon-dark-circle {
+		border: $border-size solid;
+	}
+}
+
+$border-radiuses: "xs" 4px, "sm" 6px, "md" 8px, "lg" 10px, "xl" 12px;
+
+@each $size, $border-radius in $border-radiuses {
+	.icon-#{$size}.icon-light-square,
+	.icon-#{$size}.icon-mid-square,
+	.icon-#{$size}.icon-dark-square,
+	.icon-#{$size}.icon-glass,
+	.icon-#{$size}.icon-modern,
+	.icon-#{$size} + .icon-background {
+		border-radius: $border-radius;
+	}
+}
+
+.icon-modern {
+	border: 1px solid;
+	@extend %shadow-xs;
+}
+
+$border-sizes-icon-glass: "xs" 0.5px, "sm" 0.75px, "md" 1px, "lg" 1px, "xl" 1px;
+
+@each $size, $border-size in $border-sizes-icon-glass {
+	.icon-#{$size}.icon-glass {
+		border: $border-size solid;
+	}
+}
+
+// icon colors
+// theme=light-circle
+$icon-colors: "primary" var(--red-600) var(--red-100), "gray" var(--gray-600) var(--gray-100),
+	"error" var(--error-600) var(--error-100), "warning" var(--warning-600) var(--warning-100),
+	"success" var(--success-600) var(--success-100);
+
+@each $type, $color, $bg-color in $icon-colors {
+	.icon-#{$type} {
+		color: $color;
+		background-color: $bg-color;
+	}
+}
+
+// icon theme colors
+$icon-theme-colors: "light-circle-outline" "primary" var(--red-600) var(--red-100) var(--red-50),
+	"light-circle-outline" "gray" var(--gray-600) var(--gray-100) var(--gray-50),
+	"light-circle-outline" "error" var(--error-600) var(--error-100) var(--error-50),
+	"light-circle-outline" "warning" var(--warning-600) var(--warning-100) var(--warning-50),
+	"light-circle-outline" "success" var(--success-600) var(--success-100) var(--success-50),
+	"dark-circle" "primary" var(--white) var(--red-600) var(--red-700),
+	"dark-circle" "gray" var(--white) var(--gray-600) var(--gray-700),
+	"dark-circle" "error" var(--white) var(--error-500) var(--error-600),
+	"dark-circle" "warning" var(--white) var(--warning-500) var(--warning-600),
+	"dark-circle" "success" var(--white) var(--success-500) var(--success-600),
+	"mid-square" "primary" var(--white) var(--red-600),
+	"dark-square" "primary" var(--red-200) var(--red-800),
+	"modern" "primary" var(--gray-600) var(--white) var(--gray-200),
+	"glass" "primary" var(--white) var(--icon-glass) var(--icon-glass);
+
+@each $theme, $type, $color, $bg-color, $border-color in $icon-theme-colors {
+	.icon-#{$type}.icon-#{$theme} {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+.icon-wrapper {
+	position: relative;
+}
+
+.icon-glass {
+	backdrop-filter: blur(8px);
+}
+
+.icon-glass + .icon-background {
+	position: absolute;
+	z-index: -1;
+	background-color: var(--red-700);
+	transform: rotate(15deg);
+	left: 5px;
+	top: -5px;
+}
+
+$icon-background-position: "xs" 4px, "sm" 5px, "md" 6px, "lg" 7px, "xl" 8px;
+
+@each $size, $value in $icon-background-position {
+	.icon-#{$size} + .icon-background {
+		top: -$value;
+		left: $value;
+	}
+}

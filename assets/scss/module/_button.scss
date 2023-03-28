@@ -1,0 +1,240 @@
+// button
+button {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: max-content;
+
+	font-family: inherit;
+	cursor: pointer;
+	transition: all 0.15s ease-in-out;
+}
+
+button,
+[role="button"] {
+	font-weight: var(--font-w-semibold);
+	border: 1px solid transparent;
+	border-radius: 8px;
+	@extend %shadow-xs;
+}
+
+// button sizes
+$button-sizes: "sm" 32px 8px 14px 8px "%text-sm", "md" 40px 10px 16px 8px "%text-sm",
+	"lg" 44px 10px 18px 8px "%text-md", "xl" 48px 12px 20px 8px "%text-md",
+	"2xl" 60px 16px 28px 12px "%text-lg";
+
+@each $size, $height, $padding-1, $padding-2, $gap, $text in $button-sizes {
+	.b-#{$size} {
+		height: $height;
+		padding: $padding-1 $padding-2;
+		gap: $gap;
+		@extend #{$text};
+	}
+}
+
+// button size for button icon only
+$button-icon-sizes: "sm" 36px 8px, "md" 40px 10px, "lg" 44px 12px, "xl" 48px 14px, "2xl" 56px 16px;
+
+@each $size, $value, $padding in $button-icon-sizes {
+	.b-#{$size}.b-icon {
+		width: $value;
+		height: $value;
+		padding: $padding;
+	}
+}
+
+// button full width
+.button-grow {
+	flex-grow: 1;
+}
+
+// button icon size
+.b-sm > svg,
+.b-md > svg,
+.b-lg > svg,
+.b-xl > svg {
+	height: rem(20);
+	width: rem(20);
+}
+
+.b-2xl > svg {
+	height: rem(24);
+	width: rem(24);
+}
+
+// button types
+$button-colors: "primary" var(--white) var(--red-500) var(--red-500),
+	"secondary-gray" var(--gray-600) var(--white) var(--gray-300),
+	"secondary-color" var(--red-600) var(--red-50) var(--red-50),
+	"tertiary-gray" var(--gray-600) var(--white) transparent,
+	"tertiary-color" var(--red-600) var(--white) transparent,
+	"link-gray" var(--gray-600) var(--white) transparent,
+	"link-color" var(--red-600) var(--white) transparent;
+
+@each $type, $color, $bg-color, $border-color in $button-colors {
+	.b-#{$type} {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+.b-tertiary-gray,
+.b-tertiary-color,
+.b-link-gray,
+.b-link-color {
+	box-shadow: none;
+}
+
+// button colors hover
+$button-colors-hover: "primary" "" var(--red-600) var(--red-600), "secondary-gray" "" var(--gray-50),
+	"secondary-color" var(--red-700) var(--red-100) var(--red-100),
+	"tertiary-gray" var(--gray-800) var(--gray-50), "tertiary-color" var(--red-700) var(--red-50),
+	"link-gray" var(--gray-800), "link-color" var(--red-700);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-hover {
+	.b-#{$type}:hover {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+// button colors focus
+$button-colors-focus: "primary" "" var(--red-500) var(--red-500), "secondary-gray" "" var(--white),
+	"secondary-color" "" var(--red-50) var(--red-50), "tertiary-gray" var(--gray-600) var(--white),
+	"tertiary-color" var(--red-600) var(--white), "link-gray" var(--gray-600),
+	"link-color" var(--red-600);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-focus {
+	.b-#{$type}:focus {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+$button-shadows-focus: "primary" var(--red-100), "secondary-gray" var(--gray-100),
+	"secondary-color" var(--red-100);
+
+@each $type, $color in $button-shadows-focus {
+	.b-#{$type}:focus {
+		@include set-shadow-xs(4, $color);
+	}
+}
+
+// button colors disabled
+$button-colors-disabled: "primary" "" var(--red-200) var(--red-200),
+	"secondary-gray" var(--gray-300) "" var(--gray-200),
+	"secondary-color" var(--red-300) var(--red-25) var(--red-25), "tertiary-gray" var(--gray-300),
+	"tertiary-color" var(--gray-300), "link-gray" var(--gray-300), "link-color" var(--gray-300);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-disabled {
+	.b-#{$type}:disabled {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+		pointer-events: none;
+	}
+}
+
+// button colors for destructive buttons
+// button colors destructive
+$button-colors-destructive: "primary" "" var(--error-600) var(--error-600),
+	"secondary-gray" var(--error-700) var(--white) var(--error-300),
+	"secondary-color" var(--error-700) var(--error-50) var(--error-50),
+	"tertiary-gray" var(--error-700) var(--white) transparent,
+	"tertiary-color" var(--error-700) var(--white) transparent,
+	"link-gray" var(--error-700) var(--white) transparent,
+	"link-color" var(--error-700) var(--white) transparent;
+
+@each $type, $color, $bg-color, $border-color in $button-colors-destructive {
+	.b-#{$type}.destructive {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+// button colors hover
+$button-colors-destructive-hover: "primary" "" var(--error-700) var(--error-700),
+	"secondary-gray" var(--error-800) var(--error-50),
+	"secondary-color" var(--error-800) var(--error-100) var(--error-100),
+	"tertiary-gray" var(--error-800) var(--error-50),
+	"tertiary-color" var(--error-800) var(--error-50), "link-gray" var(--error-800),
+	"link-color" var(--error-800);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-destructive-hover {
+	.b-#{$type}.destructive:hover {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+// button colors destructive focus
+$button-colors-destructive-focus: "primary" "" var(--error-600) var(--error-600),
+	"secondary-gray" var(--error-700) var(--white),
+	"secondary-color" var(--error-700) var(--error-50) var(--error-50),
+	"tertiary-gray" var(--error-700) var(--white), "tertiary-color" var(--error-700) var(--white),
+	"link-gray" var(--error-700), "link-color" var(--error-700);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-destructive-focus {
+	.b-#{$type}.destructive:focus {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+	}
+}
+
+$button-shadows-destructive-focus: "primary" var(--error-100), "secondary-gray" var(--error-100),
+	"secondary-color" var(--error-100);
+
+@each $type, $color in $button-shadows-destructive-focus {
+	.b-#{$type}.destructive:focus {
+		@include set-shadow-xs(4, $color);
+	}
+}
+
+// button colors destructive disabled
+$button-colors-destructive-disabled: "primary" "" var(--error-200) var(--error-200),
+	"secondary-gray" var(--error-300) "" var(--error-200),
+	"secondary-color" var(--error-300) var(--error-25) var(--error-25),
+	"tertiary-gray" var(--error-300), "tertiary-color" var(--error-300), "link-gray" var(--error-300),
+	"link-color" var(--error-300);
+
+@each $type, $color, $bg-color, $border-color in $button-colors-destructive-disabled {
+	.b-#{$type}.destructive:disabled {
+		color: $color;
+		background-color: $bg-color;
+		border-color: $border-color;
+		pointer-events: none;
+	}
+}
+
+//icon colors
+.b-secondary-gray:not(.destructive) {
+	& > svg {
+		color: var(--gray-500);
+	}
+
+	&:hover > svg {
+		color: var(--gray-600);
+	}
+
+	&:focus > svg {
+		color: var(--gray-500);
+	}
+
+	&:disabled > svg {
+		color: var(--error-300);
+	}
+}
+
+.b-secondary-color:not(.destructive) {
+	&:disabled > svg {
+		color: var(--error-300);
+	}
+}

@@ -1,8 +1,58 @@
-@media (min-width: 700px) {
-	p {
-		color: chocolate;
-	}
+@media (min-width: $min-width-tablet) {
 	.hide {
 		display: none;
+	}
+
+	.product-benefits {
+		.container:last-child > img {
+			order: 0;
+		}
+
+		.container {
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+
+			.content {
+				padding: 0px 40px;
+			}
+		}
+	}
+
+	.plug-and-play {
+		.container {
+			.content {
+				padding: 0 172px;
+			}
+		}
+	}
+}
+
+@media (min-width: $min-width-wide-screen) {
+	.product-benefits {
+		.container {
+			.content {
+				padding: 0px 112px;
+			}
+		}
+	}
+
+	.plug-and-play {
+		padding: 96px 80px;
+
+		.container {
+			.content {
+				padding: 0px 224px;
+			}
+
+			.wrapper {
+				.component {
+					flex-direction: row;
+				}
+
+				.text {
+					padding-top: 10px;
+				}
+			}
+		}
 	}
 }

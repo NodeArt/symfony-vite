@@ -1,0 +1,164 @@
+// badge
+.badge {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	width: max-content;
+	font-weight: var(--font-w-medium);
+	border-radius: 16px;
+	mix-blend-mode: multiply;
+	gap: 4px;
+}
+
+// badge sizes
+.badge-sm {
+	padding: 2px 8px;
+	height: 22px;
+	@extend %text-xs;
+}
+
+.badge-md {
+	padding: 2px 10px;
+	height: 24px;
+	@extend %text-sm;
+}
+
+.badge-lg {
+	padding: 4px 12px;
+	height: 28px;
+	@extend %text-sm;
+}
+
+// badge with icon only
+.badge-sm.badge-icon {
+	width: 22px;
+	padding: 5px;
+}
+
+.badge-md.badge-icon {
+	width: 24px;
+	padding: 6px;
+}
+
+.badge-lg.badge-icon {
+	width: 28px;
+	padding: 8px;
+}
+
+// badge with icon=dot
+.badge-sm.badge-icon-dot {
+	padding: 2px 8px 2px 6px;
+}
+
+.badge-md.badge-icon-dot {
+	padding: 2px 10px 2px 8px;
+	gap: 6px;
+}
+
+.badge-lg.badge-icon-dot {
+	padding: 4px 12px 4px 10px;
+	gap: 6px;
+}
+
+.badge-sm.badge-icon-dot > img,
+.badge-md.badge-icon-dot > img,
+.badge-lg.badge-icon-dot > img {
+	height: rem(8);
+	padding: 1px;
+}
+
+.badge-sm.badge-icon-dot > svg,
+.badge-md.badge-icon-dot > svg,
+.badge-lg.badge-icon-dot > svg {
+	height: rem(8);
+	width: rem(8);
+	padding: 1px;
+}
+
+// badge with icon=avatar, icon=country
+.badge-sm.badge-icon-avatar {
+	padding: 2px 8px 2px 3px;
+	gap: 6px;
+}
+
+.badge-md.badge-icon-avatar {
+	padding: 2px 10px 2px 4px;
+	gap: 6px;
+}
+
+.badge-lg.badge-icon-avatar {
+	padding: 4px 12px 4px 6px;
+	gap: 6px;
+}
+
+.badge-sm.badge-icon-avatar > img,
+.badge-md.badge-icon-avatar > img,
+.badge-lg.badge-icon-avatar > img {
+	height: rem(16);
+	padding: 0;
+	filter: none;
+}
+
+.badge-sm.badge-icon-avatar > svg,
+.badge-md.badge-icon-avatar > svg,
+.badge-lg.badge-icon-avatar > svg {
+	height: rem(16);
+	width: rem(16);
+	padding: 0;
+}
+
+// badge colors
+$badge-colors: "gray" var(--gray-700) var(--gray-100) var(--gray-500),
+	"primary" var(--red-600) var(--red-50) var(--red-500),
+	"error" var(--error-600) var(--error-50) var(--error-500),
+	"warning" var(--warning-600) var(--warning-50) var(--warning-500),
+	"success" var(--success-600) var(--success-50) var(--success-500),
+	"blue-gray" var(--gray-blue-600) var(--gray-blue-50) var(--gray-blue-400),
+	"blue-light" var(--blue-light-600) var(--blue-light-50) var(--blue-light-500),
+	"blue" var(--blue-500) var(--blue-50) var(--blue-400),
+	"indigo" var(--blue-dark-600) var(--blue-dark-50) var(--blue-dark-500),
+	"purple" var(--purple-600) var(--purple-50) var(--purple-500),
+	"pink" var(--pink-600) var(--pink-50) var(--pink-500),
+	"rose" var(--rose-600) var(--rose-50) var(--rose-500),
+	"orange" var(--orange-dark-600) var(--orange-dark-50) var(--orange-dark-500);
+
+// generate badge styles based on color
+@each $type, $color, $bg-color, $svg-color in $badge-colors {
+	.badge-#{$type} {
+		color: $color;
+		background-color: $bg-color;
+
+		& > svg {
+			color: $svg-color;
+		}
+	}
+}
+
+// badge outline
+.badge-outline {
+	background-color: #fff;
+	border: 1.5px solid;
+}
+
+// badge with icon - icon sizes
+.badge-sm > img,
+.badge-md > img,
+.badge-lg > img {
+	height: rem(12);
+	padding: 2.5px;
+}
+
+.badge-sm > svg,
+.badge-md > svg,
+.badge-lg > svg {
+	height: rem(12);
+	width: rem(12);
+	padding: 2.5px;
+}
+
+.badge-outline > svg {
+	padding: 1.5px;
+}
